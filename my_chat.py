@@ -1,19 +1,32 @@
+# importing different files
+
 from default_spy_detail import spy, Spy, ChatMessage, friends
 from spy_name_validation import name_validation, age_validation, rating_validation
 from spy_choice import choice
 from steganography.steganography import Steganography
 from datetime import datetime
 
+# importing ends
+
+#s pychat Application starts from here
 print("\n\t\t****Welcome to SpyChat Application****\n")
+
+# Ask want to continue as stored user or want to create new profile
 menu = "Do you want to continue as " + spy.salutation + " " + spy.name + " (Y/N)? "
 choice1 = raw_input(menu)
 
+# if you agreed with saved profile than
 if str.upper(choice1) == "Y":
     choice(spy)
+
+# if you want a new profile
 elif str.upper(choice1) == "N":
+    # clearing the stored profile
     spy = Spy("","",0,0.0)
     spy.name = raw_input("Enter Your Name : ")
     if len(spy.name) > 0:
+        
+        # validation on name
         spy.salutation = raw_input("Please define your Gender.\n\t1.\tMale(M) \n\t2.\tFemale(F)\n\t\t")
         if spy.salutation.upper() == "M" or spy.salutation == "1":
             spy.name = ("Mr." + " " +spy.name)
@@ -27,6 +40,7 @@ elif str.upper(choice1) == "N":
             print("Please Enter valid options. (-_-)")
             exit(0)
 
+        # validation on age
         spy.age = raw_input("Enter your Age : ")
         if len(spy.age) > 0:
             spy.age = int(spy.age)
@@ -39,6 +53,8 @@ elif str.upper(choice1) == "N":
                 print ("\t\t****Sorry. You are not eligible to become a spy. (-_-) ****")
             else:
                 print ("\t\t****Sorry. You entered wrong Input. (-_-) ****")
+
+            # validation on rating
             spy.age = int(spy.age)
             if (spy.age > 12 and spy.age < 50):
                 if spy.rating > 4.5 and spy.rating <= 5.0:
