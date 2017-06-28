@@ -14,9 +14,11 @@ def send_message():
     X = raw_input("What is the name of the Image : ")
     original_image = img_path + X + img_name
     try:
-        output_path = "encrypted_images\output.jpg"
+        counter = 1
+        output_path = "encrypted_images\%d.jpg"%counter
         text = raw_input("What do you want to Say : ")
         Steganography.encode(original_image, output_path, text)
+        counter = counter +1
     except:
         print "Wrong Image Name"
 

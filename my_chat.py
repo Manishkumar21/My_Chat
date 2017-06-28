@@ -21,4 +21,4 @@ elif str.upper(choice1) == "N":
         spy.rating = float(spy.rating)
         choice(spy)
     else:
-        print 'Please add a valid spy name'
+        print "Please add a valid spy name"
