@@ -16,14 +16,16 @@ def send_message():
     try:
         counter = 1
         output_path = "encrypted_images\%d.jpg"%counter
-        text = raw_input("What do you want to Say : ")
-        Steganography.encode(original_image, output_path, text)
-        counter = counter +1
+        text = raw_input("What do you want to Say (MAX- 20) : ")
+        if len(text) <= 20:
+            Steganography.encode(original_image, output_path, text)
+            counter = counter +1
+            print "\n\t\tSecret Message is sent inside the Image."
+        else:
+            print "\n\t\tMaximum Limit Reached"
     except:
         print "Wrong Image Name"
 
     new_chat = ChatMessage(text,True)
 
     friends[friend_choice].chats.append(new_chat)
-
-    print "Secret Message is sent inside the Image."

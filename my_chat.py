@@ -25,7 +25,7 @@ elif str.upper(choice1) == "N":
     spy = Spy("","",0,0.0)
     spy.name = raw_input("Enter Your Name : ")
     if len(spy.name) > 0:
-        
+
         # validation on name
         spy.salutation = raw_input("Please define your Gender.\n\t1.\tMale(M) \n\t2.\tFemale(F)\n\t\t")
         if spy.salutation.upper() == "M" or spy.salutation == "1":
