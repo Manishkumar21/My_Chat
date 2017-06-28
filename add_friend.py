@@ -38,10 +38,10 @@ def add_friend():
             else:
                 print ("\t\t****Sorry. You entered wrong Input. (-_-) ****")
         else:
-            print "\n\t\t****Please Enter the Age of your Friend****\n"
+            print "\n\t\t****Please Enter the Age of your Friend (-_-)****\n"
 
         return len(friends)
     else:
-        print "Please Enter the Name of your Friend"
+        print "Please Enter the Name of your Friend (-_-)"
 
 
