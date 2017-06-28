@@ -24,7 +24,7 @@ def choice(spy):
                     updated_status_message = None
                     spy.current_status_message = add_status(STATUS_MESSAGES)
                 elif menu_choice == 2:
-                    print "\t****Select the friend you want to send the Message****"
+                    print "\t****Enter the details of your Friend****"
                     number_of_friends = add_friend()
                     print("Now You Have Total Friends = %d" % number_of_friends)
                 elif menu_choice == 3:

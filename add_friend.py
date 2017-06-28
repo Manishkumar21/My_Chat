@@ -4,21 +4,44 @@ def add_friend():
     new_friend = Spy('','',0,0.0)
 
     new_friend.name = raw_input("Please add your friend's Good Name : ")
-    new_friend.salutation = raw_input("Specify the Gender.\n\t1.\tMale \n\t2.\tFemale\n\t\t ")
+    if len(new_friend.name) > 0:
+        new_friend.salutation = raw_input("Please define your Gender.\n\t1.\tMale(M) \n\t2.\tFemale(F)\n\t\t")
+        if new_friend.salutation.upper() == "M" or new_friend.salutation == "1":
+            new_friend.name = ("Mr." + " " +new_friend.name)
+            new_friend.name = new_friend.name.upper()
+            print ("\t\t****Your Friend name is %s ****"%new_friend.name)
+        elif new_friend.salutation.upper() == "F" or new_friend.salutation == "2":
+            new_friend.name = ("Miss." + "  "+ new_friend.name)
+            new_friend.name = new_friend.name.upper()
+            print ("\t\t****Welcome %s ****" % new_friend.name)
+        else:
+            print("Please Enter valid options. (-_-)")
+            exit(0)
 
-    new_friend.name = new_friend.salutation + " " + new_friend.name
+        new_friend.age = raw_input("Enter your Age : ")
+        if len(new_friend.age) > 0:
+            new_friend.age = int(new_friend.age)
+            if (new_friend.age > 12 and new_friend.age < 50):
+                print ("\t\t****Oh! Great %s . You can give us Rating****" % new_friend.name)
+                new_friend.rating = float(raw_input("Please give Rating i.e ( 0-5) : "))
 
-    new_friend.age = raw_input("Enter your Age : ")
-    new_friend.age = int(new_friend.age)
+                if len(new_friend.name) > 0 and new_friend.age > 12 and new_friend.rating >= 2.0:
+                    friends.append(new_friend)
+                    print "\t****1(ONE) Friend Added Sucessfully****"
+                else:
+                    print "Sorry! Invalid Input. We can't add Spy.\n\t\t****Thank You****"
 
-    print ("\t\t****Oh! Great. Give us Rating****")
-    new_friend.rating = raw_input("Please give Rating of your Friend from ( 0-5) : ")
-    new_friend.rating = float(new_friend.rating)
+            elif (new_friend.age > 50):
+                print ("\t\t****Sorry. You are Older to become a spy. (-_-) ****")
+            elif (new_friend.age < 12):
+                print ("\t\t****Sorry. You are not eligible to become a spy. (-_-) ****")
+            else:
+                print ("\t\t****Sorry. You entered wrong Input. (-_-) ****")
+        else:
+            print "\n\t\t****Please Enter the Age of your Friend****\n"
 
-    if len(new_friend.name) > 0 and new_friend.age > 12 and new_friend.rating >= 2.0:
-        friends.append(new_friend)
-        print "\t****1(ONE) Friend Added Sucessfully****"
+        return len(friends)
     else:
-        print "Sorry! Invalid Input. We can't add Spy.\n\t\t****Thank You****"
+        print "Please Enter the Name of your Friend"
 
-    return len(friends)
+

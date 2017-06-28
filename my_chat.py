@@ -4,7 +4,6 @@ from spy_choice import choice
 from steganography.steganography import Steganography
 from datetime import datetime
 
-
 print("\n\t\t****Welcome to SpyChat Application****\n")
 menu = "Do you want to continue as " + spy.salutation + " " + spy.name + " (Y/N)? "
 choice1 = raw_input(menu)
