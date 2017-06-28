@@ -1,7 +1,5 @@
 from default_spy_detail import spy, Spy, ChatMessage, friends
-def add_status():
-    STATUS_MESSAGES = ["My name is Manish", "Change The GamE"]
-
+def add_status(STATUS_MESSAGES):
     updated_status_message = None
     if spy.current_status_message != None:
 
@@ -16,7 +14,7 @@ def add_status():
         if len(new_status_message) > 0:
             STATUS_MESSAGES.append(new_status_message)
             updated_status_message = new_status_message
-
+            spy.current_status_message = updated_status_message
     elif default.upper() == 'Y':
         item_position = 1
         for message in STATUS_MESSAGES:
