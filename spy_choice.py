@@ -24,10 +24,9 @@ def choice(spy):
 
                  #if user enter something
             if len(menu_choice) > 0:
-                menu_choice = int(menu_choice)
 
                      #if user press 1
-                if menu_choice == 1:
+                if menu_choice == "1":
                     print "\n\t****Please Add Your Thoughts With Us****"
                     updated_status_message = None
 
@@ -35,29 +34,29 @@ def choice(spy):
                     spy.current_status_message = add_status(STATUS_MESSAGES)
 
                      #if user press 2
-                elif menu_choice == 2:
+                elif menu_choice == "2":
                     print "\n\t****Enter the details of your Friend****"
                          # add friend function is called
                     number_of_friends = add_friend()
                     print("\n\t\t****Now You Have Total Friends = [%d]****" % number_of_friends)
 
                      # if user press 3
-                elif menu_choice == 3:
+                elif menu_choice == "3":
                          # send message function is called
                     send_message()
 
                      # if user press 4
-                elif menu_choice == 4:
+                elif menu_choice == "4":
                          # read message function is called
                     read_message()
 
                      # if user press 5
-                elif menu_choice == 5:
+                elif menu_choice == "5":
                           # read_chat_history function is called
                     read_chat_history()
 
                      # if user press 6
-                elif menu_choice == 6:
+                elif menu_choice == "6":
                          #it will close the application
                     print "\n\t****Thank you. Its honor to have you with Us****"
                     exit(0)
@@ -66,8 +65,8 @@ def choice(spy):
 
                  # if user press anything else
                 else:
-                    show_menu = False
+                    print "\n\t\t\t****Wrong Input.****(-_-)"
 
     # if user press nothing
     else:
-        print ("Sorry. You entered wrong Input. (-_-) ")
+        print ("\n\t\t\tSorry. You entered wrong Input.**** (-_-) ")

@@ -89,3 +89,5 @@ elif str.upper(choice1) == "N":
             print "\n\tPlease Enter your Age First (-_-)"
     else:
         print ("\n\tPlease Enter your Name first. (-_-)")
+else:
+    print ("\n\tPlease Enter something. (-_-)")
