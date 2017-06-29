@@ -8,7 +8,7 @@ def add_status(STATUS_MESSAGES):
     #if user have any status
     if spy.current_status_message != None:
 
-        print "Your current Message is %s\n" % (spy.current_status_message)
+        print "\t********Your current Message is %s*******\n" % (spy.current_status_message)
     else:
         print "\tYou don't have any status message currently \n"
 
@@ -17,7 +17,7 @@ def add_status(STATUS_MESSAGES):
 
     #if no then set new status and stored in the updated_status list
     if default.upper() == "N":
-        new_status_message = raw_input("What Status do you want to set ? ")
+        new_status_message = raw_input("\n\tWhat Status do you want to set ? ")
         if len(new_status_message) > 0:
             STATUS_MESSAGES.append(new_status_message)
             updated_status_message = new_status_message
@@ -30,17 +30,17 @@ def add_status(STATUS_MESSAGES):
             print '%d. %s' % (item_position, message)
             item_position = item_position + 1
 
-        message_selection = int(raw_input("\nChoose from the above Messages : "))
+        message_selection = int(raw_input("\n\tChoose from the above Messages : "))
 
         if len(STATUS_MESSAGES) >= message_selection:
             updated_status_message = STATUS_MESSAGES[message_selection - 1]
 
     else:
-        print "Option Is not valid."
+        print "\n\t\t\t\t****Option Is not valid.****"
 
     if updated_status_message:
-        print "Your updated status message is : %s" % (updated_status_message)
+        print "\n\t\t\t\t****Your updated status message is : %s****" % (updated_status_message)
     else:
-        print "you did not enter any status message"
+        print "\n\t\t\t\t****you did not enter any status message****"
 
     return updated_status_message

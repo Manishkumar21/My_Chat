@@ -22,7 +22,7 @@ def read_message():
     print select_file
 
     #variable that will call the image
-    X = raw_input("What is the name of the Image that you want to decode: ")
+    X = raw_input("\n\tWhat is the name of the Image that you want to decode: ")
 
     #decoding the image
     output_path = img_path + X + img_name

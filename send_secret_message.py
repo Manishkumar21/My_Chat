@@ -18,21 +18,32 @@ def send_message():
     img_name = ".jpg"
     select_file = [f for f in listdir("original_images\\") if isfile(join("original_images\\", f))]
     print select_file
-    print ("Select from Above Images Name : ")
-    X = raw_input("What is the name of the Image : ")
+    print ("\n\t\tSelect from Above Images Name")
+    X = raw_input("\tWhat is the name of the Image : ")
     original_image = img_path + X + img_name
 
     #if image is in the folder than message will be coded
     try:
         counter = 1
         output_path = "encrypted_images\%d.jpg"%counter
-        text = raw_input("What do you want to Say (MAX- 20) : ")
-        if len(text) <= 20:
+        text = raw_input("\tWhat do you want to Say (MAX- 100) : ")
+
+        #if length of message is less then 100 and greater than 0
+        if len(text) <= 100 and len(text) > 0:
+
+            #Special Keywords using simple if statement
+            if text.upper() == "SOS":
+                text="Save our Soul"
+            if text.upper()=="SAVE ME" and text.upper()=="SAVEME":
+                text="I am in danger, Please save me"
+            if text.upper()=="BUSY":
+                text="I am busy right now, I will contact you later"
+
             Steganography.encode(original_image, output_path, text)
             counter = counter +1
             print "\n\t\tSecret Message is sent inside the Image."
         else:
-            print "\n\t\tMaximum Limit Reached"
+            print "\n\t\tCheck Your Written Message Properly"
 
     #if image is not in the folder than message will not coded
     except:

@@ -7,10 +7,10 @@ def select_a_friend():
 
     #show all the friends
     for friend in friends:
-        print "%d. %s %s. Age %d and rating %.2f is online" % (item_number +1, friend.salutation, friend.name,friend.age,friend.rating)
+        print "\n\t\t\t%d. %s %s. Age %d and rating %.2f is online" % (item_number +1, friend.salutation, friend.name,friend.age,friend.rating)
         item_number = item_number + 1
 
     #choose from the list
-    friend_choice = raw_input("Choose from above Friends : ")
+    friend_choice = raw_input("\n\tChoose from above Friends : ")
     friend_choice_position = int(friend_choice) - 1
     return friend_choice_position
