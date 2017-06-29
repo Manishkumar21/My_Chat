@@ -1,4 +1,5 @@
-# importing different files
+# importing different files and their functions like default user profile, validation file, spy_choice file,
+    # datetime function from library and Steganography after installing it in the sysyem
 
 from default_spy_detail import spy, Spy, ChatMessage, friends
 from spy_name_validation import name_validation, age_validation, rating_validation
@@ -6,9 +7,8 @@ from spy_choice import choice
 from steganography.steganography import Steganography
 from datetime import datetime
 
-# importing ends
 
-#s pychat Application starts from here
+#spychat Application starts from here
 print("\n\t\t****Welcome to SpyChat Application****\n")
 
 # Ask want to continue as stored user or want to create new profile
